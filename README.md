@@ -70,9 +70,17 @@ OPENAI_EMBEDDING_MODEL=text-embedding-v2
 - 聊天模型走腾讯云 DeepSeek
 - embedding 走阿里云百炼
 
-## Step 5: 初始化本地 SQLite
+## Step 5: 准备本地数据
 
-这一步会生成本地数据库文件，并写入示例日程和 DDL 数据。
+这一步会做两件事：
+
+- 读取 [sessions.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/sessions.csv) 和 [deadlines.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/deadlines.csv)，生成本地 SQLite
+- 扫描 [data/vdb](/Users/carl/Code/Course/ADB/langflow-db/data/vdb) 里的文本文件，作为向量检索的数据源
+
+SQLite 仍然只有两张表：
+
+- `sessions`
+- `deadlines`
 
 ```bash
 python scripts/prepare_lab.py
@@ -81,6 +89,17 @@ python scripts/prepare_lab.py
 运行后会生成：
 
 - [tutorial.db](/Users/carl/Code/Course/ADB/langflow-db/data/tutorial.db)
+
+如果你想改数据：
+
+- 改结构化数据：编辑 [sessions.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/sessions.csv) 或 [deadlines.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/deadlines.csv)
+- 改文本数据：在 [data/vdb](/Users/carl/Code/Course/ADB/langflow-db/data/vdb) 里增删 `.txt` 文件
+
+改完后重新跑一遍：
+
+```bash
+python scripts/prepare_lab.py
+```
 
 ## Step 6: 导出 workflow 图
 

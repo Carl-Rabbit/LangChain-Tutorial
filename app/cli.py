@@ -52,7 +52,7 @@ def main() -> None:
         summary = seed_tutorial_database(SQLITE_PATH)
         print(
             f"检测到本地还没有 SQLite 数据，已自动初始化: {summary['db_path']} "
-            f"(sessions={summary['sessions']}, deadlines={summary['deadlines']})"
+            f"(tables={summary['table_count']}, rows={summary['row_count']})"
         )
 
     try:
