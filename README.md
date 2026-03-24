@@ -77,7 +77,7 @@ OPENAI_EMBEDDING_MODEL=text-embedding-v2
 - 读取 [sessions.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/sessions.csv) 和 [deadlines.csv](/Users/carl/Code/Course/ADB/langflow-db/data/rdb/deadlines.csv)，生成本地 SQLite
 - 扫描 [data/vdb](/Users/carl/Code/Course/ADB/langflow-db/data/vdb) 里的文本文件，作为向量检索的数据源
 
-SQLite 仍然只有两张表：
+SQLite 会有两张表：
 
 - `sessions`
 - `deadlines`
@@ -168,7 +168,7 @@ CLI 会打印：
 
 ### 3. 聊天接口能用，但 embedding 不通
 
-最简单的做法就是继续用 README 里的推荐配置：腾讯聊天，百炼 embedding。
+检查 Key 是否填写正确，是否有权限调用。
 
 ### 4. 第一次运行比想象中慢
 
