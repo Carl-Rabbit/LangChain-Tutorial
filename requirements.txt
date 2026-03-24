@@ -1,0 +1,9 @@
+alayalite==0.1.1a1.post20260211
+langchain>=0.3.25
+langchain-community>=0.3.24
+langchain-openai>=0.3.16
+langchain-text-splitters>=0.3.8
+langgraph>=0.6.7
+numpy>=1.26
+python-dotenv>=1.0.1
+sqlalchemy>=2.0
